@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Titulo</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <h1>{{titulo}}</h1>
+
+        <!-- forma 1-->
+        <input type="text" v-model="nueva_fruta" @keyup.enter="agregarfruta">
+        <!-- forma 2-->
+        <!--<input type="text" v-model="nueva_fruta" v-on:keyup.ente="agregarfruta">-->
+
+
+
+        <button v-on:click="agregarfruta">Forma 1</button>
+        <button @click="agregarfruta">Forma 2</button>
+
+        <ul>
+            <li v-for="fruta of frutas">{{fruta}}</li>
+        </ul>
+
+        <ul>
+            <li v-for="persona of personas">
+
+                <button @click="persona.estado++">+</button>
+                <input type="number" v-model.number="persona.estado"> {{persona.nombre}}
+                <span v-if="persona.estado === 0"> - No activo </span>
+
+            </li>
+        </ul>
+
+        <h2>total: {{sumarestados}}</h2>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="01.js"></script>
+
+</body>
+
+</html>
